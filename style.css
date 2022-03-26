@@ -1,0 +1,1136 @@
+﻿
+/* 设置body */
+body {
+	/*
+	overflow-Y右边垂直滚动条 设为hidden隐藏
+	background-color背景底色 设为#000黑色
+	font-family网页字型 设为Microsoft JhengHei, Arial 微软正黑体,Arial
+	*/	
+	overflow-Y:hidden;
+    background-color: #000;
+    text-align: center;    
+    font-family: Microsoft JhengHei, Arial;    
+}
+
+/* 设置内容显示区域 */
+#content {
+	/*
+	min-height最小高度 设为100%
+	list-style列表风格 设为none不显示
+	margin边界 设为0
+	padding展开设置为0
+	white-space段落文本 设为nowrap 不换行	
+	*/
+    min-height: 100%;	
+	list-style: none;     
+    margin: 0;
+    padding: 0; 
+    white-space: nowrap; 
+}
+
+/* 设置超链接 */
+a {	
+	/*
+	color文字颜色 设为#F26522 橙橘色
+	*/
+    color: #F26522;
+}
+
+/* 绘制 背景 */
+#Bg{
+	/*
+	position位置 设为absolute绝对位置
+	width全景宽度 设为502% 
+	height全景高度 设为100%
+	*/
+	position:absolute;
+	width:400%;
+	height:100%;
+	background: url(image/bg_Sky.png);
+	background-size:100%;
+	background-repeat:repeat; 
+	left:0%;
+	top:0%;/*84%*/
+	z-index:0;	   
+}
+
+/* 绘制 主角 */
+#Player{
+	position: fixed;
+    width: 205px;
+    height: 205px;
+    background: url(image/player_Rwalk2.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+	left:35%;
+	bottom:0%;/*84%*/
+	z-index:3;
+	margin:-186px 0 0 -168px;	
+
+    -webkit-animation-iteration-count:infinite;	
+	-webkit-animation-duration:1s;	
+    -webkit-animation-delay:0s; 	
+}
+
+/* 动画 人物右走 */
+@-webkit-keyframes RWalk{
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+      0% {			
+			background: url(image/player_Rwalk1.png);
+			background-size:auto 100%;
+		 }
+     50% {
+			background: url(image/player_Rwalk2.png);
+			background-size:auto 100%;			
+		 }
+    100% 
+		 {			
+			background: url(image/player_Rwalk1.png);
+			background-size:auto 100%;	
+		 }
+}
+
+/* 动画 人物左走 */
+@-webkit-keyframes LWalk{
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+      0% {			
+			background: url(image/player_Rwalk2.png);	
+			background-size:auto 100%;	
+		 }
+     50% {
+			background: url(image/player_Rwalk1.png);
+			background-size:auto 100%;	
+		 }
+    100% 
+		 {			
+			background: url(image/player_Rwalk2.png);
+			background-size:auto 100%;	
+		 }
+}
+
+
+
+/* 绘制 蝙蝠1 */
+.hudie1 {
+	position: absolute;
+    width: 70px;
+    height: 60px;
+    background: url(image/hudie1.png) no-repeat;
+    background-size: 100%;
+    /* padding-top: 10px; */
+    left: 128%;
+    top: 282px;
+    z-index: 3;
+    margin: -186px 0 0 -168px;
+    -webkit-animation-name: hudieFly1;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-duration:2s;
+    -webkit-animation-delay:0s;     
+}
+
+/* 绘制 蝙蝠2 */
+.hudie2 {
+	position:absolute;
+	 width: 70px;
+    height: 60px;
+	background: url(image/hudie1.png);
+	background-size:100%;
+	background-repeat:no-repeat; 
+	left: 135%;
+    top: 471px;
+	z-index:3;
+	margin:-186px 0 0 -168px;
+	-webkit-animation-name:hudieFly2;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:2s;
+	-webkit-animation-delay:0s;  
+}
+
+/* 绘制 蝙蝠3 */
+.hudie3 {
+	position:absolute;
+	width: 70px;
+    height: 60px;
+	background: url(image/hudie1.png);
+	background-size:100%;
+	background-repeat:no-repeat; 
+	left: 158%;
+    top: 348px;
+	z-index:3;
+	margin:-186px 0 0 -168px;
+	-webkit-animation-name:hudieFly1;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:2s;
+	-webkit-animation-delay:0s;     
+}
+.hudie4 {
+	position:absolute;
+	width: 70px;
+    height: 60px;
+	background: url(image/hudie1.png);
+	background-size:100%;
+	background-repeat:no-repeat; 
+	left:  166%;
+    top: 558px;
+	z-index:3;
+	margin:-186px 0 0 -168px;
+	-webkit-animation-name:hudieFly2;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:2s;
+	-webkit-animation-delay:0s;     
+}
+
+
+/* 动画 蝙蝠1飞 */
+@-webkit-keyframes hudieFly1 {
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+	0% {			
+		background: url(image/hudie1.png);
+		 background-size:100%;  
+		   -webkit-transform: translateX(0px) translateY(0px);   
+	}	
+	
+	50% {
+		background: url(image/hudie3.png);
+		  background-size:100%;	 
+	    -webkit-transform: translateX(-15px) translateY(-25px);   
+	}		
+	
+	100% {			
+		background: url(image/hudie1.png);
+		background-size: 100%;
+		-webkit-transform: translateX(0px) translateY(0px); 
+	} 
+}
+
+/* 动画 蝙蝠2飞 */
+@-webkit-keyframes hudieFly2 {
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+	0% {			
+		background: url(image/hudie1.png);
+		background-size:100%;
+		-webkit-transform: translateX(0px) translateY(0px);
+	}	
+	
+	50% {
+		background: url(image/hudie2.png);
+		background-size:100%;	
+		-webkit-transform: translateX(15px) translateY(10px);
+	}		
+	
+    100% {			
+		background: url(image/hudie1.png);
+		background-size:100%;	
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+}
+
+
+/* 绘制 飞猪文字排版 */
+.FlyPigText{
+    position: absolute;
+    color: #000;
+    left: 166%;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 10px;
+
+}
+#FlyPigText1{
+	top: 27%;
+	background-color: lightpink;
+	border: 1px lightpink solid;
+
+	 -webkit-animation-name:moveText1;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:2s;
+	-webkit-animation-delay:0s;  
+
+}
+#FlyPigText2{
+	top: 37%;
+	background-color: lightblue;
+	 -webkit-animation-name:moveText2;
+	 border: 1px lightblue solid;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:2s;
+	-webkit-animation-delay:0s;    
+}
+#FlyPigText3{
+	top: 47%;
+	background-color: #e4e41da6;
+	 -webkit-animation-name:moveText3;
+	 border: 1px lightyellow solid;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:2s;
+	-webkit-animation-delay:0s;    
+}
+
+
+
+/* 动画 猪1飞 */
+@-webkit-keyframes moveText1 {
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+	0% {		
+		
+		-webkit-transform: translateX(0px) translateY(0px);
+	}	
+	50% {
+	
+		-webkit-transform: translateX(0px) translateY(10px);
+	}
+			
+	
+	
+    100% {			
+	
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+}
+
+/* 动画 猪2飞 */
+@-webkit-keyframes moveText2 {
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+	0% {		
+		
+		-webkit-transform: translateX(0px) translateY(0px);
+	}	
+	
+	50% {
+	
+		-webkit-transform: translateX(0px) translateY(-10px);
+	}		
+	
+	
+    100% {			
+		
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+}
+
+/* 动画 猪3飞 */
+@-webkit-keyframes moveText3 {
+	/* /
+	%数为动画的时间轴长度百分比
+	*/ 
+	0% {		
+		
+		-webkit-transform: translateX(0px) translateY(0px);
+	}	
+	
+	50% {
+		
+		-webkit-transform: translateX(0px) translateY(-20px);
+	}		
+	
+	75% {
+	
+		-webkit-transform: translateX(0px) translateY(-10px);
+	}
+	
+    100% {			
+		
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+}
+
+/* 绘制 气球1 */
+#Balloon1{
+	background:url(image/Balloon.png);	
+	background-repeat:no-repeat;
+	background-size:100%;
+	width:130px;
+	height:410px;
+	position:absolute;
+	top:14%; 
+	left:235%; 
+	z-index:2;
+	-webkit-animation-name:BalloonFly1;
+    -webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:10s;
+    -webkit-animation-delay:0s;    
+}
+
+/* 绘制 气球2 */
+#Balloon2{
+	background:url(image/Balloon.png);
+	background-repeat:no-repeat;
+	background-size:100%;
+	width:130px;
+	height:410px;
+	position:absolute;
+	top:28%; 
+	left:253%; 
+	z-index:2;
+	-webkit-animation-name:BalloonFly2;
+    -webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:15s;
+    -webkit-animation-delay:0s;    
+}
+
+/* 绘制 气球3 */
+#Balloon3{
+	background:url(image/Balloon.png);
+	background-repeat:no-repeat;
+	background-size:100%;
+	width:130px;
+	height:410px;
+	position:absolute;
+	top:18%; 
+	left:270%; 
+	z-index:2;
+	-webkit-animation-name:BalloonFly3;
+    -webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:20s;
+    -webkit-animation-delay:0s;    
+}
+
+/* 动画 气球1飞 */
+@-webkit-keyframes BalloonFly1 {
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+	0% {	
+		-webkit-transform: translateX(0px) translateY(0px);
+	}	
+	
+	50% {
+		-webkit-transform: translateX(-10px) translateY(-40px);
+	}		
+	
+	75% {
+		-webkit-transform: translateX(10px) translateY(-30px);
+	}
+	
+    100% {	
+		-webkit-transform: translateX(px) translateY(0px);
+	}
+}
+
+/* 动画 气球2飞 */
+@-webkit-keyframes BalloonFly2 {
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+	0% {	
+		-webkit-transform: translateX(0px) translateY(0px);
+	}	
+	
+	50% {
+		-webkit-transform: translateX(-40px) translateY(-60px);
+	}		
+	
+	75% {
+		-webkit-transform: translateX(-10px) translateY(-10px);
+	}
+	
+	30% {
+		-webkit-transform: translateX(-10px) translateY(50px);
+	}
+	
+    100% {	
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+}
+
+/* 动画 气球3飞 */
+@-webkit-keyframes BalloonFly3 {
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+	0% {	
+		-webkit-transform: translateX(0px) translateY(0px);
+	}	
+	
+	50% {
+		-webkit-transform: translateX(0px) translateY(-60px);
+	}		
+	
+	75% {
+		-webkit-transform: translateX(-50px) translateY(-10px);
+	}
+	
+    100% {		
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+}
+
+/* 绘制 气球文字排版 */
+#BalloonText{	
+	position:absolute;	
+	top:50px; 
+	left:20%; 
+}
+
+.Bird{
+	background-size:100%;
+	position:absolute; 
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:10s;
+	-webkit-animation-delay:0s;  
+}
+#Bird1a{
+	background-image:url(image/bird01.png);	
+	background-repeat: no-repeat;   
+	width: 210px;
+    height: 175px;
+    top: 50%;
+    left: 358%;
+	z-index:0;
+	-webkit-animation-name:BirdFly1;
+}
+
+/* 动画 小鸟飞 */
+
+#Bird1b{
+	background-image:url(image/bird01.png);	
+	background-repeat: no-repeat;   
+	width:210px; 
+	height:175px; 
+	top:5%; 
+	left:218%; 
+	z-index:0;
+	-webkit-animation-name:BirdFly1;
+}
+
+#Bird2a{
+	background-image:url(image/bird03.png);	
+	background-repeat: no-repeat;   
+	width: 210px;
+    height: 281px;
+    top: -6%;
+    left: 350%;
+	z-index:0;
+	-webkit-animation-name:BirdFly2;
+}
+
+/* 动画 小鸟飞 */
+
+#Bird2b{
+	background-image:url(image/bird03.png);	
+	background-repeat: no-repeat;   
+	width: 210px;
+    height: 289px;
+	top:-6%; 
+	left:195%; 
+	z-index:0;
+	-webkit-animation-name:BirdFly2;
+}
+#Bird3a{
+	background-image:url(image/rbird05.png);	
+	background-repeat: no-repeat;   
+	width: 210px;
+    height: 281px;
+    top: 20%;
+    left: 300%;
+	z-index:0;
+	-webkit-animation-name:BirdFly3;
+}
+
+/* 动画 小鸟飞 */
+
+#Bird3b{
+	background-image:url(image/rbird05.png);	
+	background-repeat: no-repeat;   
+	width: 210px;
+    height: 289px;
+	top: 43%;
+    left: 136%;
+	z-index:0;
+	-webkit-animation-name:BirdFly3;
+}
+
+/* 动画 小鸟飞 */
+@-webkit-keyframes BirdFly1 {
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+	0% {			
+		background: url(image/bird01.png);
+		background-size:100%;
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+
+	10% {
+		background: url(image/bird02.png);
+		background-size:100%;	
+	}
+	
+	20% {
+		background: url(image/bird02.png);
+		background-size:100%;	
+	}	
+	
+	30% {
+		background: url(image/bird01.png);
+		background-size:100%;
+	}
+	
+	40% {
+		background: url(image/bird02.png);
+		background-size:100%;	
+	}
+	
+	50% {
+		background: url(image/rbird01.png);
+		background-size:100%;	
+		-webkit-transform: translateX(-760px) translateY(-20px);
+	}
+	
+	60% {
+		background: url(image/rbird01.png);
+		background-size:100%;			
+	}
+
+	70% {
+		background: url(image/rbird02.png);
+		background-size:100%;
+	}
+
+	80% {
+		background: url(image/rbird01.png);
+		background-size:100%;
+	}
+
+	90% {			
+		background: url(image/rbird02.png);
+		background-size:100%;
+	} 
+	
+	100% {			
+		background: url(image/rbird01.png);
+		background-size:100%;	
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+}
+
+/* 动画 小鸟飞 */
+@-webkit-keyframes BirdFly2{
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+	0% {			
+		background: url(image/bird03.png);
+		background-size:100%;
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+
+	10% {
+		background: url(image/bird04.png);
+		background-size:100%;	
+	}
+	
+	20% {
+		background: url(image/bird03.png);
+		background-size:100%;	
+		-webkit-transform: translateX(-440px) translateY(-10px);
+	}	
+	
+	30% {
+		background: url(image/bird04.png);
+		background-size:100%;
+	}
+	
+	40% {
+		background: url(image/bird04.png);
+		background-size:100%;	
+	}
+	
+	50% {
+		background: url(image/rbird03.png);
+		background-size:100%;	
+		-webkit-transform: translateX(-900px) translateY(-30px);
+	}
+	
+	60% {
+		background: url(image/rbird04.png);
+		background-size:100%;			
+	}
+
+	70% {
+		background: url(image/rbird04.png);
+		background-size:100%;
+	}
+
+	80% {
+		background: url(image/rbird03.png);
+		background-size:100%;
+		-webkit-transform: translateX(-420px) translateY(-10px);
+	}
+
+	90% {			
+		background: url(image/rbird04.png);
+		background-size:100%;
+	} 
+	
+	100% {			
+		background: url(image/rbird03.png);
+		background-size:100%;	
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+}
+/* 动画 小鸟飞 */
+@-webkit-keyframes BirdFly3{
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+	0% {			
+		background: url(image/rbird05.png);
+		background-size:100%;
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+
+	10% {
+		background: url(image/rbird06.png);
+		background-size:100%;	
+	}
+	
+	20% {
+		background: url(image/rbird06.png);
+		background-size:100%;	
+	}	
+	
+	30% {
+		background: url(image/rbird05.png);
+		background-size:100%;
+	}
+	
+	60% {
+		background: url(image/rbird06.png);
+		background-size:100%;	
+	}
+	
+	50% {
+		background: url(image/bird05.png);
+		background-size:100%;	
+		-webkit-transform: translateX(760px) translateY(20px);
+	}
+	
+	60% {
+		background: url(image/bird05.png);
+		background-size:100%;			
+	}
+
+	70% {
+		background: url(image/bird06.png);
+		background-size:100%;
+	}
+
+	80% {
+		background: url(image/bird05.png);
+		background-size:100%;
+	}
+
+	90% {			
+		background: url(image/bird06.png);
+		background-size:100%;
+	} 
+	
+	100% {			
+		background: url(image/bird05.png);
+		background-size:100%;	
+		-webkit-transform: translateX(0px) translateY(0px);
+	}
+}
+/* 联系方式 */
+.contact{
+     background-image: url(image/biankuang.png);
+     position: absolute;
+     top: -4%;
+     background-size: 100%;
+     left: 354%;
+     width: 472px;
+     height: 456px;
+
+}
+/* 绘制 熊猫 */
+#Panda{
+	background-image:url(image/panda1.png);	
+	background-size:100%;
+	background-repeat: no-repeat; 
+	width:650px; 
+	height:606px; 
+	position:absolute; 
+	bottom: 4%;
+    left: 274%;
+	z-index:0;
+}
+
+/* 绘制 长颈鹿 */
+#Giraffe{
+	background-image:url(image/Fawn.png);	
+	background-size:100%;
+	background-repeat: no-repeat;   
+	width:570px; 
+	height:570px; 
+	position:absolute; 
+	bottom:4%;
+    left: 32%;
+	z-index:0;
+}
+
+/* 绘制 地板1 */
+#Floor1{
+	background-image:url(image/Floor1.png); 
+	background-repeat: repeat-x;   
+	width:400%; 
+	height:20px; 
+	position:absolute; 
+	bottom:0%; 
+	left:0px; 
+	z-index:1;
+}
+
+/* 绘制 地板2 */
+#Floor2{
+	background-image:url(image/Floor2.png); 
+	background-repeat: repeat-x;   
+	width:406%; 
+	height:100px; 
+	position:absolute; 
+	bottom:2%; 
+	left:-100px; 
+	z-index:3;
+}
+
+/* 绘制 草1 */
+#Grass1{
+	background-image:url(image/fg_Grass.png);
+	background-repeat: repeat-x;   
+	width:400%; 
+	height:10%; 
+	position:absolute; 
+	bottom:2%; 
+	left:-20px; 
+	z-index:1;
+	-webkit-animation-name:Grass1;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:8s;
+    -webkit-animation-delay:0s;    
+}
+
+/* 动画 草1 */
+@-webkit-keyframes Grass1{
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+      0% {			
+			opacity:1;			
+		 }
+     50% {
+			opacity:0.2;			 			
+		 }
+    100% 
+		 {			
+			opacity:1;			
+		 }
+}
+
+/* 绘制 草2 */
+#Grass2{
+	background-image:url(image/fg_Grass.png); 
+	background-repeat: repeat-x;   
+	width:400%; 
+	height:10%; 
+	position:absolute; 
+	bottom:2%; 
+	left:-60px; 
+	z-index:1;
+	-webkit-animation-name:Grass2;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:8s;
+    -webkit-animation-delay:0s;    
+}
+
+/* 动画 草2 */
+@-webkit-keyframes Grass2{
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+      0% {			
+			opacity:0.2;			
+		 }
+     50% {
+			opacity:1;			 			
+		 }
+    100% 
+		 {			
+			opacity:0.2;			
+		 }
+}
+
+/* 前景对话框 */
+#Speak{
+	background-image:url(image/Speak.png);
+	background-repeat:no-repeat; 
+	background-size:100%;  
+	width:150px; 
+	height:0px; 
+	margin:-50px auto auto 450px;
+	z-index:3;
+}
+
+/* 前景洞窟 */
+#Cave{
+	background-image:url(image/Cave.png);
+	background-repeat:no-repeat; 
+	background-size:40%;  
+	width:235%; 
+	height:50%; 
+	position:absolute; 
+	top:50%; 
+	left:175%; 
+	z-index:3;
+}
+
+/* 绘制 栅栏1 */
+#Fences1{
+	background-image:url(image/Fences.png);	
+	background-repeat:repeat-x; 
+	background-size:5% 120px;  
+	width:110%; 
+	height:120px; 
+	position:absolute; 
+	bottom:3%; 
+	left:0%; 
+	z-index:2;
+}
+.mountain{
+	position: absolute;
+	left: 100%;
+	top: 20%;
+	background: url(image/travel.png);
+	background-repeat: no-repeat; 
+	width: 582px;
+    height: 531px;
+}
+.mountain02{
+	position: absolute;
+    left: 189%;
+    top: 27%;
+    background: url(image/travel02.png);
+    background-repeat: no-repeat;
+    /* z-index: 5; */
+    width: 582px;
+    height: 531px;
+}
+/* 绘制 栅栏2 */
+#Fences2{
+	background-image:url(image/Fences.png);	
+	background-repeat:repeat-x; 
+	background-size:5% 120px;  
+	width: 127%;
+    height: 120px;
+    position: absolute;
+    bottom: 3%;
+    left: 273%; 
+	z-index:2;
+}
+
+/* 背景 */
+/* 绘制 背景云1 */
+#bg_Cloud1{
+	opacity:0.6;	
+	position:absolute; 
+	top:13%; 
+	left:127%; 
+	z-index:0;
+}
+
+/* 绘制 背景云2 */
+#bg_Cloud2{
+	opacity:0.6;	
+	position:absolute; 
+	top:10%; 
+	left:230%; 
+	z-index:0;
+}
+
+/* 绘制 背景云3 */
+#bg_Cloud3{
+	opacity:0.6;	
+	position:absolute; 
+	top: 1%;
+    left: 288%; 
+	z-index:0;
+}
+
+/* 绘制 背景云4 */
+#bg_Cloud4{
+	opacity:0.7;	
+	position:absolute; 
+	top:18%; 
+	left:340%; 
+	z-index:0;
+}
+
+
+
+
+/* 标题 */
+/* 绘制 标题云 */
+.Cloud{
+background:url(image/Cloud.png);
+background-size:100%;
+width:380px;
+height:200px;
+}
+
+/* 标题文字排版 */
+.title{
+line-height:170px;
+}
+
+/* 标题云1排版 */
+#introduce {
+	background-image: url(image/tips.png);
+	position: absolute;
+	top: -7%;
+	left: 5%;
+	height: 370px;
+	width: 566px;
+}
+.title1{
+	font-size: 29pt;
+    margin-top: 28px;
+    line-height: 449px;
+   
+}
+
+
+/* 标题云2排版 */
+#Cloud2 {
+	position:absolute;
+	top:5%;
+	left:70%;
+}
+
+/* 标题云3排版 */
+#Cloud3 {
+	position:absolute;
+	top:5%;
+	left:158%;	
+}
+
+/* 标题云4排版 */
+#Cloud4 {
+	position:absolute;
+	top:5%;	
+	left:243%;
+	z-index:1;
+}
+
+/* 标题云5排版 */
+#Cloud5 {
+	position:absolute;
+	top:5%;	
+	left:318%;	
+}
+
+
+/* 内容 */
+/* 绘制 内容1 */
+#content1 {
+	position:absolute;
+	top: 30%;
+    left: 80%;
+}
+
+/* 绘制 内容2 */
+#content2 {
+	position:absolute;
+	top: 40%;
+    left: 78%;
+}
+
+/* 绘制 内容3 */
+#content3 {
+	position:absolute;
+	top: 50%;
+    left: 80%;
+}
+
+/* 绘制 内容4 */
+#content4 {
+	position:absolute;
+	top:50%;	
+	left:18%;
+	-webkit-animation-name:content4;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-duration:3s;
+    -webkit-animation-delay:0s;
+}
+
+/* 动画 内容4 */
+@-webkit-keyframes content4{
+	/*
+	%数为动画的时间轴长度百分比
+	*/
+      0% {			
+			opacity:1;			
+		 }
+     50% {
+			opacity:0.2;			 			
+		 }
+    100% 
+		 {			
+			opacity:1;			
+		 }
+}
+#img_phone{
+    position: absolute;
+    top: 19%;
+    z-index: 5;
+}
+
+#img_email{
+    top: 29%;
+}
+#img_weixin{
+     top: 38%;
+}
+#number_phone{
+	position: absolute;
+    top: 21%;
+   
+    width: 49px;
+}
+#number_email{
+    position: absolute;
+    top: 30%;
+   
+    width: 49px;
+}
+#number_weixin{
+    position: absolute;
+    top: 39%;
+    
+    width: 49px;
+}
+
+img{
+   position: absolute;
+    left: 361%;
+    width: 47px;
+    z-index: 5;
+}
+span{
+	left: 365%;
+    font-size: larger;
+   /*  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-weight: 600;
+    z-index: 5;
+}
